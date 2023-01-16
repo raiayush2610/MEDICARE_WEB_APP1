@@ -34,7 +34,7 @@ app.use(session({
 }))
 app.use(passport.initialize());
 app.use(passport.session());
-
+mongoose.set('strictQuery', false);
 mongoose.connect('mongodb://localhost:27017/doctorDetails')
 // mongoose.connect("mongodb+srv://doctor:doctor123@cluster0.zd8yt.mongodb.net/?retryWrites=true&w=majority")
 
@@ -44,7 +44,8 @@ mongoose.createConnection(process.env.DB_DEP)
 mongoose.createConnection(process.env.DB_PAT)
 mongoose.createConnection(process.env.DB_Admin)
 
-app.use('/', Registroute);
+
+app.use('/re', Registroute);
 app.use('/Pat',Patroute);
 app.use('/Doc',Docroute)
 app.use('/reacherDept',DeptRoute)

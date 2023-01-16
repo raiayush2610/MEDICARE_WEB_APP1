@@ -15,22 +15,21 @@ function Login() {
        
         try {
 
-            const res = await axios.post(`http://localhost:4000/adminLogin`,{
+            const res = await axios.post(`http://localhost:4000/admin/adminlogin`,{
                   username: email,
                   password: password                
                 }
             )
             console.log(res.data);
-              console.log(res.data.code);
-            // if(res.data === "no"){return Toast.error("This email  is not registered with us ")}
+            if(res.data === "no"){return Toast.error("This email  is not registered with us ")}
 
-            // if  (res.data ==="false") {return Toast.error("Password is Incorrect")} 
+            if  (res.data ==="false") {return Toast.error("Password is Incorrect")} 
 
-            // else{
-            //     if(res.data=== email){
-            //         // navigate("/success",{state: {email1 : email}});
+            else{
+                if(res.data=== email){
+                    console.log("Succefully");
                     
-            //     }else{return Toast.error("Password is Incorrect")}}  
+                }else{return Toast.error("Password is Incorrect")}}  
           
         } catch (error) {console.log(error);}
                 

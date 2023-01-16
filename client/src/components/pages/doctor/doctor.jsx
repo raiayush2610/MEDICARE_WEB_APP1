@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import axios from 'axios';
-import "./doctor.css"
+// import "./doctor.css"
 import Sidebar from "../../Sidebar/Sidebar";
 import Header from "../home/navbar";
 import { NavLink } from 'react-router-dom';
